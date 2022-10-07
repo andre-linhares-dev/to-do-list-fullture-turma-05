@@ -1,5 +1,7 @@
 import Router from "express";
 
+import usersRouters from "../routes/UsersRoutes.js";
+
 const routes = Router();
 
 // Métodos HTTP
@@ -9,10 +11,6 @@ const routes = Router();
 // PATCH - Atualização parcial das informações
 // DELETE - Deleção da informação
 
-routes.get("/", (request, response) => {
-  response.status(200).json({
-    message: "Hello World",
-  });
-});
+routes.use(usersRouters);
 
 export default routes;
