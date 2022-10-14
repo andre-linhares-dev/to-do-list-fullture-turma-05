@@ -36,4 +36,12 @@ export class UsersRepository {
   list() {
     return this.users;
   }
+
+  findByUsername(username) {
+    return this.users.find((user) => user.username === username);
+  }
+
+  findByEmail(email) {
+    return this.users.find((user) => user.email === email);
+  }
 }

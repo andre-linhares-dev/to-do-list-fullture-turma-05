@@ -1,6 +1,7 @@
 import Router from "express";
 
 import usersRouters from "../routes/UsersRoutes.js";
+import todosRoutes from "../routes/TodosRoutes.js";
 
 const routes = Router();
 
@@ -11,6 +12,7 @@ const routes = Router();
 // PATCH - Atualização parcial das informações
 // DELETE - Deleção da informação
 
-routes.use(usersRouters);
+routes.use("/users", usersRouters);
+routes.use("/todos", todosRoutes);
 
 export default routes;
